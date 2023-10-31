@@ -58,7 +58,7 @@
                 android:id="@+id/btnDiv"
                 android:layout_weight="1"
                 android:layout_margin="2dp"
-                android:onClick="onDigit"
+                android:onClick="onOperator"
                 android:backgroundTint="?attr/colorPrimary"
         />
 
@@ -105,7 +105,7 @@
                 android:id="@+id/btnMultiply"
                 android:layout_weight="1"
                 android:layout_margin="2dp"
-                android:onClick="onDigit"
+                android:onClick="onOperator"
                 android:backgroundTint="?attr/colorPrimary"
         />
 
@@ -152,7 +152,7 @@
                 android:id="@+id/btnSubtract"
                 android:layout_weight="1"
                 android:layout_margin="2dp"
-                android:onClick="onDigit"
+                android:onClick="onOperator"
                 android:backgroundTint="?attr/colorPrimary"
         />
 
@@ -164,11 +164,22 @@
                   android:orientation="horizontal"
                   android:layout_weight="1">
         <Button
+                android:text="@string/dot"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnDot"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                android:onClick="onDecimalPoint"
+                android:backgroundTint="?attr/colorPrimary"
+        />
+
+        <Button
                 android:text="@string/_0"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/btnZero"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:layout_margin="2dp"
                 android:onClick="onDigit"
                 android:backgroundTint="?attr/colorPrimary"
@@ -190,7 +201,7 @@
                 android:id="@+id/button14"
                 android:layout_weight="1"
                 android:layout_margin="2dp"
-                android:onClick="onDigit"
+                android:onClick="onOperator"
                 android:backgroundTint="?attr/colorPrimary"
         />
 
@@ -207,7 +218,7 @@
                 android:id="@+id/button"
                 android:layout_weight="1"
                 android:layout_margin="2dp"
-                android:onClick="onDigit"
+                android:onClick="onEqual"
                 android:backgroundTint="?attr/colorPrimary"
         />
 
