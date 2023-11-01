@@ -21,6 +21,43 @@ class MainActivity : ComponentActivity() {
 
         tvInput = findViewById(R.id.tvInput)
 
+        attachOnClickListener(R.id.btn0)
+        attachOnClickListener(R.id.btn1)
+        attachOnClickListener(R.id.btn2)
+        attachOnClickListener(R.id.btn3)
+        attachOnClickListener(R.id.btn4)
+        attachOnClickListener(R.id.btn5)
+        attachOnClickListener(R.id.btn6)
+        attachOnClickListener(R.id.btn7)
+        attachOnClickListener(R.id.btn8)
+        attachOnClickListener(R.id.btn9)
+
+        attachOnClickListener(R.id.btnClear)
+        attachOnClickListener(R.id.btnDecimal)
+        attachOnClickListener(R.id.btnPlus)
+        attachOnClickListener(R.id.btnMinus)
+        attachOnClickListener(R.id.btnMultiply)
+        attachOnClickListener(R.id.btnDivide)
+        attachOnClickListener(R.id.btnEqual)
+    }
+
+    private fun attachOnClickListener(buttonId: Int) {
+        findViewById<Button>(buttonId).setOnClickListener { onButtonClick(it) }
+    }
+
+    private fun onButtonClick(view: View) {
+        when (view.id) {
+            R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8, R.id.btn9 ->
+                onDigit(view)
+            R.id.btnClear ->
+                onClear(view)
+            R.id.btnDecimal ->
+                onDecimalPoint(view)
+            R.id.btnPlus, R.id.btnMinus, R.id.btnMultiply, R.id.btnDivide ->
+                onOperator(view)
+            R.id.btnEqual ->
+                onEqual(view)
+        }
     }
 
     fun onDigit(view: View){
@@ -123,11 +160,11 @@ class MainActivity : ComponentActivity() {
         return if(value.startsWith("-")){
             false
         }else{
-        value.contains("/")
-                || value.contains("*")
-                || value.contains("+")
-                || value.contains("-")
-    }
+            value.contains("/")
+                    || value.contains("*")
+                    || value.contains("+")
+                    || value.contains("-")
+        }
 
-}
+    }
 }
